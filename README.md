@@ -326,4 +326,23 @@ Set gfortran as the Fortran Compiler in CMake
 
 `ls`
 
-Last edited 10 November 2024
+# Error 10 November 2024
+svn: E000104: Error running context: Connection reset by peer
+
+ERROR: cannot verify columbia.vims.edu's certificate, issued by ‘CN=Sectigo RSA Domain Validation Secure Server CA,O=Sectigo Limited,L=Salford,ST=Greater Manchester,C=GB’:
+
+  Unable to locally verify the issuer's authority.
+
+To connect to columbia.vims.edu insecurely, use `--no-check-certificate'.
+
+# I try to recall the certificate
+
+`wget --no-check-certificate -r -np -nH --cut-dirs=3 -R "index.html*" https://columbia.vims.edu/schism/schism_verification_tests/`
+
+Install ca-certificates Package
+
+`sudo apt update`
+
+`sudo apt install ca-certificates`
+
+
