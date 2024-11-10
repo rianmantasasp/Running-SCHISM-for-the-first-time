@@ -1,25 +1,25 @@
-Running SCHISM for the first time
-# Check Windows in Command prompt
-Press `Win + R`, type cmd, and press Enter, or search for `Command Prompt` in the Start menu
-`winver`
-This will open a window displaying your Windows version and build information
-# Install Ubuntu linux on Windows
-Click: https://www.youtube.com/watch?v=wjbbl0TTMeo&pp=ygUjaG93IHRvIGluc3RhbGwgdWJ1bnR1IG9uIHdpbmRvd3MgMTE%3D
-# Ubuntu installed
-To navigate to the C:\schism directory from within Ubuntu (assuming it’s mounted in the /mnt directory), you can use the following command
-`cd /mnt/c/schism`
+# Running SCHISM for the first time
+1 Check Windows in Command prompt
+  Press `Win + R`, type cmd, and press Enter, or search for `Command Prompt` in the Start menu
+  `winver`
+  This will open a window displaying your Windows version and build information
+2 Install Ubuntu linux on Windows
+  Click: https://www.youtube.com/watch?v=wjbbl0TTMeo&pp=ygUjaG93IHRvIGluc3RhbGwgdWJ1bnR1IG9uIHdpbmRvd3MgMTE%3D
+3 Ubuntu installed
+  To navigate to the C:\schism directory from within Ubuntu (assuming it’s mounted in the /mnt directory), you can use the following command
+  `cd /mnt/c/schism`
 # Error: compiler mpif90
 Install MPI. You can choose between openmpi or mpich, depending on your preference. To install openmpi, run: 
-`sudo apt update`, then
-`sudo apt install openmpi-bin openmpi-common libopenmpi-dev`
+    `sudo apt update`, then
+    `sudo apt install openmpi-bin openmpi-common libopenmpi-dev`
 # No python
 Install Python or link it correctly. First, check if Python 3 is installed
-`python3 --version`
+  `python3 --version`
 If Python 3 is installed, create a symlink so python points to python3
-`sudo ln -s /usr/bin/python3 /usr/bin/python`
+  `sudo ln -s /usr/bin/python3 /usr/bin/python`
 If Python is not installed, install it with:
-`sudo apt update`
-`sudo apt install python3`
+  `sudo apt update`
+  `sudo apt install python3`
 # Error: Makefile:115: o/svn.BORA/autosrc.mk: No such file or directory
 This error means autosrc.mk is missing.
 Check if there’s an instruction to generate this file, or try running:
