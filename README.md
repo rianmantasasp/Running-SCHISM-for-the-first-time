@@ -302,11 +302,11 @@ Set gfortran as the Fortran Compiler in CMake
 
 `sudo apt update`
 
-``sudo apt install subversion`
+`sudo apt install subversion`
 
 2. Download SCHISM Verification Tests Using svn
 
-svn co https://columbia.vims.edu/schism/schism_verification_tests`
+`svn co https://columbia.vims.edu/schism/schism_verification_tests`
 
 3. Locate and Use the Correct param.nml File
 
@@ -323,4 +323,7 @@ svn co https://columbia.vims.edu/schism/schism_verification_tests`
 `cd schism_verification_tests`
 
 # Explore the available test cases
+
 `ls`
+
+# Last edited 10 November 2024
