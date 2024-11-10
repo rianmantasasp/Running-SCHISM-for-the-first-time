@@ -1,13 +1,22 @@
 # Running SCHISM for the first time
 1 Check Windows in Command prompt
+
   Press `Win + R`, type cmd, and press Enter, or search for `Command Prompt` in the Start menu
+
   `winver`
+
   This will open a window displaying your Windows version and build information
+
 2 Install Ubuntu linux on Windows
+  
   Click: https://www.youtube.com/watch?v=wjbbl0TTMeo&pp=ygUjaG93IHRvIGluc3RhbGwgdWJ1bnR1IG9uIHdpbmRvd3MgMTE%3D
+  
 3 Ubuntu installed
+
   To navigate to the C:\schism directory from within Ubuntu (assuming it’s mounted in the /mnt directory), you can use the following command
+ 
   `cd /mnt/c/schism`
+
 # Error: compiler mpif90
 Install MPI. You can choose between openmpi or mpich, depending on your preference. To install openmpi, run: 
     `sudo apt update`, then
