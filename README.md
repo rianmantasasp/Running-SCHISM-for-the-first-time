@@ -403,7 +403,7 @@ CMake Error: The source directory "/mnt/c/Users/uqrprast/Documents/schism/cmake/
 `/mnt/c/Users/uqrprast/Documents/schism/build# cd /mnt/c/Users/uqrprast/Documents/schism/build`
 `cmake ../cmake/SCHISM.local.myown`
 
-'/mnt/c/Users/uqrprast/Documents/schism/build# make -j8 pschism'
+'/mnt/c/Users/uqrprast/Documents/schism/build# make -j8 pschism`
 
 # Resolving
 
