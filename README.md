@@ -351,4 +351,158 @@ Try to re-run the code
 
 Run successfully
 
+# 27 November 2024 attempt
+
+# Starting with cloning
+
+`cd /`
+
+`cd /mnt/c/Users/uqrprast/Documents`
+
+`/mnt/c/Users/uqrprast/Documents# git clone --recurse-submodules https://github.com/schism-dev/schism.git`
+
+`cd schism`
+
+# Cloning into schism
+
+`/mnt/c/Users/uqrprast/Documents/schism# sudo apt update`
+
+`/mnt/c/Users/uqrprast/Documents/schism# sudo apt install openmpi-bin openmpi-common libopenmpi-dev`
+
+`/mnt/c/Users/uqrprast/Documents/schism# python3 --version`
+
+`/mnt/c/Users/uqrprast/Documents/schism# sudo apt install perl`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build#`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# rm -rf`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# cmake -C ../cmake/SCHISM.local.build -C ../cmake/SCHISM.local.myown ../src/`
+
+# Error
+
+CMake Error: Not a file: /mnt/c/Users/uqrprast/Documents/schism/cmake/SCHISM.local.myown
+CMake Error: Error processing file: /mnt/c/Users/uqrprast/Documents/schism/cmake/SCHISM.local.myown
+
+# Resolving
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# ls /mnt/c/Users/uqrprast/Documents/schism/build`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# cmake ../cmake/SCHISM.local.myown`
+
+# Error
+
+CMake Error: The source directory "/mnt/c/Users/uqrprast/Documents/schism/cmake/SCHISM.local.myown" does not exist.
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# ls /mnt/c/Users/uqrprast/Documents/schism/cmake`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# find /mnt/c/Users/uqrprast/Documents/schism -name "SCHISM.local*"`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# nano /mnt/c/Users/uqrprast/Documents/schism/cmake/SCHISM.local.myown`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# cd /mnt/c/Users/uqrprast/Documents/schism/build`
+`cmake ../cmake/SCHISM.local.myown`
+
+'/mnt/c/Users/uqrprast/Documents/schism/build# make -j8 pschism'
+
+# Resolving
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# sudo apt update`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# cd ../build`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# cmake -C ../cmake/SCHISM.local.build -C ../cmake/SCHISM.local.myown ../src/ -DCMAKE_VERBOSE_MAKEFILE=ON`
+
+#gfortran
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# sudo apt install gfortran`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# cd /path/to/your/build/directory`
+
+cd: /path/to/your/build/directory: No such file or directory
+
+Make directory folder
+
+`/mnt/c/schism/build# gfortran --version`
+
+`/mnt/c/schism/build# cmake -DCMAKE_Fortran_COMPILER=gfortran -C ../cmake/SCHISM.local.build -C ../cmake/SCHISM.local.myown ../src/`
+
+`/mnt/c/schism/build# which gfortran`
+
+`/mnt/c/schism/build# export FC=/usr/bin/gfortran`
+
+`/mnt/c/schism/build# cmake -DCMAKE_Fortran_COMPILER=/usr/bin/gfortran ../cmake/SCHISM.local.myown`
+
+# Trying to resolve again
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# sudo apt update`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# sudo apt install libnetcdf-dev libnetcdff-dev`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# nc-config --version`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# nc-config --cflags`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# nc-config --libs`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# cmake -DNetCDF_C_LIBRARY=/usr/lib/x86_64-linux-gnu/libnetcdf.so \ -DNetCDF_Fortran_LIBRARY=/usr/lib/x86_64-linux-gnu/libnetcdff.so \ -DNetCDF_INCLUDE_DIR=/usr/include \ -C ../cmake/SCHISM.local.build -C ../cmake/SCHISM.local.myown ../src/`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# export CXX=/usr/bin/g++`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# rm -rf CMakeCache.txt CMakeFiles/`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# mkdir -p /path/to/your/build/directory`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# cd /path/to/your/build/directory`
+
+`/path/to/your/build/directory# rm -rf CMakeCache.txt CMakeFiles/`
+
+`/path/to/your/build/directory# cmake -DCMAKE_CXX_COMPILER=/usr/bin/g++ -DCMAKE_Fortran_COMPILER=gfortran -C ../cmake/SCHISM.local.build -C ../cmake/SCHISM.local.myown ../src/`
+
+`/path/to/your/build/directory# ls /mnt/c/Users/uqrprast/Documents/schism/cmake`
+
+`/path/to/your/build/directory# ls /mnt/c/Users/uqrprast/Documents/schism/src`
+
+`/path/to/your/build/directory# cd /mnt/c/Users/uqrprast/Documents/schism/build`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# cmake -C ../cmake/SCHISM.local.myown ..`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# ls /mnt/c/Users/uqrprast/Documents/schism`
+
+`/path/to/your/build/directory# ls /mnt/c/Users/uqrprast/Documents/schism/src
+ls /mnt/c/Users/uqrprast/Documents/schism/cmake/SCHISM.local.build
+ls /mnt/c/Users/uqrprast/Documents/schism/cmake/SCHISM.local.myown`
+
+`/path/to/your/build/directory# cmake -DCMAKE_CXX_COMPILER=/usr/bin/g++ \
+      -DCMAKE_Fortran_COMPILER=/usr/bin/gfortran \
+      -C /mnt/c/Users/uqrprast/Documents/schism/cmake/SCHISM.local.build \
+      -C /mnt/c/Users/uqrprast/Documents/schism/cmake/SCHISM.local.myown \
+      /mnt/c/Users/uqrprast/Documents/schism/src`
+
+`/path/to/your/build/directory# find /mnt/c/Users/uqrprast/Documents/schism -name "SCHISM.local*"`
+
+`/path/to/your/build/directory# cd /mnt/c/Users/uqrprast/Documents/schism/build`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# rm -rf *`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# cmake -DCMAKE_CXX_COMPILER=/usr/bin/g++ \
+      -DCMAKE_Fortran_COMPILER=/usr/bin/gfortran \
+      -C /mnt/c/Users/uqrprast/Documents/schism/cmake/SCHISM.local.build \
+      -C /mnt/c/Users/uqrprast/Documents/schism/cmake/SCHISM.local.myown \
+      /mnt/c/Users/uqrprast/Documents/schism/src`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# make -j8 pschism
+/mnt/c/Users/uqrprast/Documents/schism/src/Core/gen_version.py
+/mnt/c/Users/uqrprast/Documents/schism/src/Core
+/mnt/c/Users/uqrprast/Documents/schism/src/Core/_version`
+
+# Extracting modules
+
+`/mnt/c/Users/uqrprast/Documents/schism/build#`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# sudo apt update`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# sudo apt install subversion`
+
+`/mnt/c/Users/uqrprast/Documents/schism/build# svn co https://columbia.vims.edu/schism/schism_verification_tests`
 
